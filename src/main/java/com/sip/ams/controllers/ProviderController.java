@@ -22,7 +22,7 @@ import com.sip.ams.repositories.ProviderRepository;
 
 @RestController
 @RequestMapping({"/providers", "/home*"})
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="*" )
 
 public class ProviderController {
 
