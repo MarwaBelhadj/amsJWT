@@ -36,8 +36,10 @@ public class JwtAuthenticationController {
 			authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 			
 			final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+			System.out.println("userDetails : "+ userDetails);
 			
 			final String token = jwtTokenUtil.generateToken(userDetails);
+			System.out.println("token : "+ token );
 			
 			// je suppose que le user a les info suivantes:
 			// return ResponseEntity.ok(new JwtResponse(token));
