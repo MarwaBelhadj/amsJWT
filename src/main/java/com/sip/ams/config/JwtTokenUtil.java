@@ -16,7 +16,10 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Component
 public class JwtTokenUtil implements Serializable{
 	public static final long JWT_TOKEN_VALIDITY = 5*60*60;
-	private String secret="ams2020";
+	
+	// Le mot secret de l'application est enregistré dans le fichier application.properties
+	@Value("${jwt.secret}")
+	private String secret;
 
 	public String getUsernameFromToken(String token) {
 		return getClaimFromToken(token, Claims::getSubject);
